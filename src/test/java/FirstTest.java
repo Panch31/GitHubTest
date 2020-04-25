@@ -20,9 +20,21 @@ public class FirstTest {
     public void firstTest(){
 
         WebDriver driver = new ChromeDriver(driverService, chromeOptions);
-        String http = "https://github.com/Panch31";
+        String http = "https://github.com/";
         driver.get(http);
-        WebElement name = driver.findElement(By.xpath("//span[contains(@class, 'nick')]"));
+        WebElement log = driver.findElement(By.xpath("//a[@href ='/login']"));
+        log.click();
+        driver.findElement(By.xpath("//input[@id = 'login_field']"))
+                .sendKeys("Panch31");
+
+        driver.findElement(By.xpath("//input[@id = 'password']"))
+                .sendKeys("mAEege4jJW");
+
+        WebElement logIn = driver.findElement(By.xpath("//input[@name = 'commit']"));
+        logIn.click();
+
+        driver.findElement(By.xpath("(//span[@class = 'dropdown-caret'])[2]")).click();
+        WebElement name = driver.findElement(By.xpath("//strong[@class = 'css-truncate-target']"));
         String text = name.getText();
         Assert.assertEquals(text, "Panch31");
         driver.quit();
