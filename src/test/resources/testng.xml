@@ -6,9 +6,9 @@
             <class name="FirstTest">
                 <methods>
                     <include name="linkTest"/>
-                    <exclude name="loginTest"/>
-                    <exclude name="followTest"/>
-                    <exclude name="unFollowTest"/>
+                    <include name="loginTest"/>
+                    <include name="unFollowTest"/>
+                    <include name="followTest"/>
                 </methods>
             </class>
         </classes>

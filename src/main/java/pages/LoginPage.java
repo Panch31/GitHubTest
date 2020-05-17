@@ -8,15 +8,12 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 
-public class LoginPage {
-    private WebDriver driver;
-    private WebDriverWait wait;
+public class LoginPage extends Page {
 
-    public LoginPage(WebDriver driver) {
-        PageFactory.initElements(driver, this);
-        this.driver = driver;
-        wait = new WebDriverWait(driver, 5);
+    public LoginPage(PageManager pages) {
+        super(pages);
     }
+
 
     @FindBy(xpath = "//a[@href ='/login']")
     WebElement LoginButton;
@@ -32,11 +29,6 @@ public class LoginPage {
 
     @FindBy(xpath = "//span[contains(@class, 'nick')]")
     WebElement NameSting;
-
-    public void goToHomePage() {
-        String http = "https://github.com/";
-        driver.get(http);
-    }
 
     public void clickOnLoginButton() {
         wait.until(ExpectedConditions.elementToBeClickable(LoginButton))

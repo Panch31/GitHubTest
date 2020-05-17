@@ -8,15 +8,10 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class FollowPage {
+public class FollowPage extends Page {
 
-    private WebDriver driver;
-    private WebDriverWait wait;
-
-    public FollowPage(WebDriver driver){
-        PageFactory.initElements(driver, this);
-        this.driver = driver;
-        wait = new WebDriverWait(driver, 5);
+    public FollowPage(PageManager pages) {
+        super(pages);
     }
 
     @FindBy(xpath = "(//input[@type ='submit'])[3]")
@@ -25,12 +20,7 @@ public class FollowPage {
     @FindBy(xpath = "(//input[@type ='submit'])[4]")
     WebElement unFollowButton;
 
-    public void goToPprettytonyPage(){
-        driver.get("https://github.com/pprettytony");
-    }
-
-
-    public void clickOnfollowButton(){
+    public void clickOnFollowButton(){
         wait.until(ExpectedConditions.elementToBeClickable(followButton))
                 .click();
     }

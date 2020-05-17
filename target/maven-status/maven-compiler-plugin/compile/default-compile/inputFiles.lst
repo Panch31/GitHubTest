@@ -1,5 +1,12 @@
+D:\Yevhenii\FirstTest\src\main\java\managers\SingletonAppManager.java
 D:\Yevhenii\FirstTest\src\main\java\pages\FollowPage.java
 D:\Yevhenii\FirstTest\src\main\java\pages\HomePage.java
+D:\Yevhenii\FirstTest\src\main\java\helpers\NavigationHelper.java
+D:\Yevhenii\FirstTest\src\main\java\pages\PageManager.java
 D:\Yevhenii\FirstTest\src\main\java\pages\LoginPage.java
+D:\Yevhenii\FirstTest\src\main\java\webdriver\WebDriverFactory.java
+D:\Yevhenii\FirstTest\src\main\java\helpers\UserHelper.java
 D:\Yevhenii\FirstTest\src\main\java\TestBase.java
+D:\Yevhenii\FirstTest\src\main\java\managers\AppManager.java
+D:\Yevhenii\FirstTest\src\main\java\pages\Page.java
 D:\Yevhenii\FirstTest\src\main\java\util\PropertyLoader.java

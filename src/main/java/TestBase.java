@@ -1,3 +1,5 @@
+import managers.AppManager;
+import managers.SingletonAppManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
@@ -14,33 +16,21 @@ import java.io.File;
 
 public class TestBase {
 
-    WebDriver driver;
-    LoginPage loginPage;
-    HomePage homePage;
-    FollowPage followPage;
+    AppManager app = SingletonAppManager.getInstance().manager;
+    WebDriver driver = AppManager.getWebDriver();
 
     @BeforeMethod
-    public void beforeMethod() {
-        System.out.println("Before Method");
-    }
+//    public void beforeMethod() {
+//        System.out.println("Before Method");
+//    }
 
     @BeforeClass
-    public void beforeClass() {
-        System.out.println("beforeClass");
-    }
+//    public void beforeClass() {
+//        System.out.println("beforeClass");
+//    }
 
     @BeforeSuite
     public void beforeSuite() {
-         ChromeDriverService driverService = new ChromeDriverService.Builder()
-                .usingDriverExecutable(new File("D:\\Yevhenii\\test\\chromedriver.exe"))
-                .usingAnyFreePort()
-                .build();
-        ChromeOptions chromeOptions = new ChromeOptions()
-                .addArguments("--start-maximized");
-        driver = new ChromeDriver(driverService, chromeOptions);
-        homePage = new HomePage(driver);
-        loginPage = new LoginPage(driver);
-        followPage = new FollowPage(driver);
         System.out.println("beforeSuite");
     }
 

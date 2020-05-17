@@ -8,23 +8,18 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class HomePage {
-    private WebDriver driver;
-    private WebDriverWait wait;
+public class HomePage extends Page {
 
-    public HomePage(WebDriver driver) {
-        PageFactory.initElements(driver, this);
-        this.driver = driver;
-        wait = new WebDriverWait(driver, 5);
+    public HomePage(PageManager pages) {
+        super(pages);
     }
 
-
-    public void goToHomePage() {
-        String http = "https://github.com/";
+    public void goToLink(String http) {
         driver.get(http);
     }
 
     public String getTitle(){
+        driver.get("https://github.com/");
         wait.until(ExpectedConditions.titleIs(driver.getTitle()));
         return driver.getTitle();
     }
