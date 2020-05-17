@@ -1,0 +1,16 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+
+<suite name="Suite1" verbose="1">
+    <test name="PunchTest">
+        <classes>
+            <class name="FirstTest">
+                <methods>
+                    <include name="linkTest"/>
+                    <exclude name="loginTest"/>
+                    <exclude name="followTest"/>
+                    <exclude name="unFollowTest"/>
+                </methods>
+            </class>
+        </classes>
+    </test>
+</suite>

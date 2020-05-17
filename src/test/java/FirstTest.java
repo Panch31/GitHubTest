@@ -4,39 +4,48 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeDriverService;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import pages.FollowPage;
+import pages.HomePage;
+import pages.LoginPage;
+import sun.rmi.runtime.Log;
+import util.PropertyLoader;
 
 import java.io.File;
 
-public class FirstTest {
-    public ChromeDriverService driverService = new ChromeDriverService.Builder()
-            .usingDriverExecutable(new File("D:\\Yevhenii\\test\\chromedriver.exe"))
-            .usingAnyFreePort()
-            .build();
-    public ChromeOptions chromeOptions = new ChromeOptions();
+public class FirstTest extends TestBase {
 
     @Test
-    public void firstTest(){
-
-        WebDriver driver = new ChromeDriver(driverService, chromeOptions);
-        String http = "https://github.com/";
-        driver.get(http);
-        WebElement log = driver.findElement(By.xpath("//a[@href ='/login']"));
-        log.click();
-        driver.findElement(By.xpath("//input[@id = 'login_field']"))
-                .sendKeys("Panch31");
-
-        driver.findElement(By.xpath("//input[@id = 'password']"))
-                .sendKeys("mAEege4jJW");
-
-        WebElement logIn = driver.findElement(By.xpath("//input[@name = 'commit']"));
-        logIn.click();
-
-        driver.findElement(By.xpath("(//span[@class = 'dropdown-caret'])[2]")).click();
-        WebElement name = driver.findElement(By.xpath("//strong[@class = 'css-truncate-target']"));
-        String text = name.getText();
-        Assert.assertEquals(text, "Panch31");
-        driver.quit();
+    public void loginTest() {
+        loginPage.goToHomePage();
+        loginPage.clickOnLoginButton();
+        loginPage.enterToLoginField();
+        loginPage.enterToPasswordField();
+        loginPage.clickOnSubmitButton();
+        Assert.assertEquals(loginPage.getName(), "Panch31");
     }
+
+    @Test
+    public void linkTest() {
+        System.out.print(PropertyLoader.loadProperty("browser.name"));
+//        homePage.goToHomePage();
+//        Assert.assertEquals(homePage.getTitle(), "The world’s leading software development platform · GitHub");
+    }
+
+    @Test
+    public void followTest() {
+        followPage.goToPprettytonyPage();
+        followPage.clickOnfollowButton();
+        Assert.assertEquals(followPage.getTextFromUnFollowButton(), "Unfollow");
+    }
+
+    @Test
+    public void unFollowTest() {
+        followPage.goToPprettytonyPage();
+        followPage.clickOnUnFollowButton();
+        Assert.assertEquals(followPage.getTextFromFollowButton(), "Follow");
+    }
+
 }
