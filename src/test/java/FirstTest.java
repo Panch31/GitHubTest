@@ -1,6 +1,7 @@
 
 import org.testng.Assert;
 import org.testng.annotations.Test;
+import util.DataProviderClass;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -79,6 +80,16 @@ public class FirstTest extends TestBase {
         Assert.assertEquals(marketplaceUrl, "https://github.com/marketplace?type=actions");
 
         Assert.assertNotEquals(actionsPageUrl, marketplaceUrl);
+    }
+
+    @Test(dataProvider = "dataProvider", dataProviderClass = DataProviderClass.class)
+    public void dataProviderTest(String data)
+    {
+        app.getNavigationHelper().goToLink("https://github.com/");
+        app.getRepositoryHelper().enterToSearchField(data);
+        app.getRepositoryHelper().getRepoSearchListString().forEach(elem -> Assert.assertTrue(elem.toString()
+                .toLowerCase().contains(data)));
+        System.out.println("Data is: " + data);
     }
 }
 
