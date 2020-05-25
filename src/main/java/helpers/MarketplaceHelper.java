@@ -9,7 +9,6 @@ public class MarketplaceHelper extends PageManager {
     }
 
     public void actionButtonClick(){
-        homePage.goToLink("https://github.com/marketplace");
         marketplacePage.actionButtonSubmit();
     }
 

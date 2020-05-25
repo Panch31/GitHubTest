@@ -11,15 +11,15 @@ public class UserHelper extends PageManager {
     }
 
 
-    public void enterUserLogin(){
+    public void enterUserLogin(String name, String pass){
         loginPage.clickOnLoginButton();
-        loginPage.enterToLoginField();
-        loginPage.enterToPasswordField();
+        loginPage.enterToLoginField(name);
+        loginPage.enterToPasswordField(pass);
         loginPage.clickOnSubmitButton();
     }
 
-    public String getUserName(){
-        return loginPage.getName();
+    public String getUserName(String userLink){
+        return loginPage.getName(userLink);
     }
 
     public String followPrettyTony(){

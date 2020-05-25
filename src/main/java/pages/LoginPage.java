@@ -35,14 +35,14 @@ public class LoginPage extends Page {
                 .click();
     }
 
-    public void enterToLoginField() {
+    public void enterToLoginField(String name) {
         wait.until(ExpectedConditions.elementToBeClickable(LoginField))
-                .sendKeys("Panch31");
+                .sendKeys(name);
     }
 
-    public void enterToPasswordField() {
+    public void enterToPasswordField(String pass) {
         wait.until(ExpectedConditions.elementToBeClickable(PasswordField))
-                .sendKeys("mAEege4jJW");
+                .sendKeys(pass);
     }
 
     public void clickOnSubmitButton() {
@@ -50,8 +50,8 @@ public class LoginPage extends Page {
                 .click();
     }
 
-     public String getName(){
-        driver.get("https://github.com/Panch31/");//TODO
+     public String getName(String userLink){
+        driver.get(userLink);
          return wait.until(ExpectedConditions.visibilityOf(NameSting))
                  .getText();
     }

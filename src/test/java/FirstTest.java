@@ -12,8 +12,8 @@ public class FirstTest extends TestBase {
     @Test
     public void loginTest() {
         app.getNavigationHelper().goToLink("https://github.com/");
-        app.getUserHelper().enterUserLogin(); //TODO
-        Assert.assertEquals(app.getUserHelper().getUserName(), "Panch31");
+        app.getUserHelper().enterUserLogin("Panch31", "mAEege4jJW");
+        Assert.assertEquals(app.getUserHelper().getUserName("https://github.com/Panch31/"), "Panch31");
     }
 
     @Test
@@ -51,12 +51,13 @@ public class FirstTest extends TestBase {
 
     @Test
     public void marketplaceTest(){
+        app.getNavigationHelper().goToLink("https://github.com/marketplace");
         app.getMarketplaceHelper().actionButtonClick();
         String resultCountInActionPage = app.getMarketplaceHelper().getTextFromResultCountInSearchedPage();
         String filteredBy = app.getMarketplaceHelper().getTextFromFilteredBy();
         app.getMarketplaceHelper().searchByAnotherWord("app");
 
-        Assert.assertEquals(filteredBy, "Actions");
+        Assert.assertTrue(filteredBy.contains("Actions"));
         Assert.assertNotEquals(resultCountInActionPage, app.getMarketplaceHelper()
                 .getTextFromResultCountInSearchedPage());
         Assert.assertNotEquals(filteredBy, app.getMarketplaceHelper()
@@ -66,6 +67,7 @@ public class FirstTest extends TestBase {
 
     @Test
     public void marketPlaceLinkTest(){
+        app.getNavigationHelper().goToLink("https://github.com/marketplace");
         app.getMarketplaceHelper().actionButtonClick();
         app.getMarketplaceHelper().clickOnActionsDeleteButtonOnMarketPlaceActionsPage();
 

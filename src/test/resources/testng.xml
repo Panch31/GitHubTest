@@ -10,8 +10,8 @@
                     <exclude name="unFollowTest"/>
                     <exclude name="followTest"/>
                     <exclude name="repoTest"/>
-                    <exclude name="marketplaceTest"/>
-                    <include name="marketPlaceLinkTest"/>
+                    <include name="marketplaceTest"/>
+                    <exclude name="marketPlaceLinkTest"/>
                 </methods>
             </class>
         </classes>
