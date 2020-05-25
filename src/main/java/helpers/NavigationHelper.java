@@ -14,8 +14,13 @@ public class NavigationHelper extends PageManager {
         homePage.goToLink(http);
     }
 
-    public String getTittle(){
-        return homePage.getTitle();
+    public String getTittle(String text){
+        return homePage.getTitle(text);
+    }
+
+    public String getCurrentUrl(){
+        String url = marketplacePage.getCurrentUrl();
+        return url;
     }
 
 }

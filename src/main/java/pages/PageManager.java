@@ -12,12 +12,18 @@ public class PageManager {
     protected HomePage homePage;
     protected LoginPage loginPage;
     protected FollowPage followPage;
+    protected SearchPage searchPage;
+    protected MarketplacePage marketplacePage;
+    protected MarketplaceSearchedPage marketplaceSearchedPage;
 
     public PageManager(WebDriver driver){
         this.driver = driver;
         homePage = initElements(new HomePage(this));
         loginPage = initElements(new LoginPage(this));
         followPage = initElements(new FollowPage(this));
+        searchPage = initElements(new SearchPage(this));
+        marketplacePage = initElements(new MarketplacePage(this));
+        marketplaceSearchedPage = initElements(new MarketplaceSearchedPage(this));
     }
 
     private <T extends  Page> T initElements(T page){

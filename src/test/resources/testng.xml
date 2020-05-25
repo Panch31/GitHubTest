@@ -5,10 +5,13 @@
         <classes>
             <class name="FirstTest">
                 <methods>
-                    <include name="linkTest"/>
-                    <include name="loginTest"/>
-                    <include name="unFollowTest"/>
-                    <include name="followTest"/>
+                    <exclude name="linkTest"/>
+                    <exclude name="loginTest"/>
+                    <exclude name="unFollowTest"/>
+                    <exclude name="followTest"/>
+                    <exclude name="repoTest"/>
+                    <exclude name="marketplaceTest"/>
+                    <include name="marketPlaceLinkTest"/>
                 </methods>
             </class>
         </classes>

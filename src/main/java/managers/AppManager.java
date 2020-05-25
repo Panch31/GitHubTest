@@ -1,6 +1,8 @@
 package managers;
 
+import helpers.MarketplaceHelper;
 import helpers.NavigationHelper;
+import helpers.RepositoryHelper;
 import helpers.UserHelper;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -15,6 +17,8 @@ public class AppManager {
 
     private UserHelper userHelper;
     private NavigationHelper navigationHelper;
+    private RepositoryHelper repositoryHelper;
+    private MarketplaceHelper marketplaceHelper;
 
     private static WebDriver driver;
 
@@ -31,9 +35,14 @@ public class AppManager {
         driver.manage().timeouts().pageLoadTimeout(20,TimeUnit.SECONDS);
         userHelper = new UserHelper();
         navigationHelper = new NavigationHelper();
+        repositoryHelper = new RepositoryHelper();
+        marketplaceHelper = new MarketplaceHelper();
     }
 
     public static WebDriver getWebDriver(){return driver;}
     public UserHelper getUserHelper(){return userHelper;}
     public NavigationHelper getNavigationHelper(){return navigationHelper;}
+    public RepositoryHelper getRepositoryHelper(){return repositoryHelper;}
+    public MarketplaceHelper getMarketplaceHelper(){return marketplaceHelper;}
+
 }

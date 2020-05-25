@@ -51,10 +51,9 @@ public class LoginPage extends Page {
     }
 
      public String getName(){
-        driver.get("https://github.com/Panch31/");
-        String name = wait.until(ExpectedConditions.visibilityOf(NameSting))
-                .getText();
-        return name;
+        driver.get("https://github.com/Panch31/");//TODO
+         return wait.until(ExpectedConditions.visibilityOf(NameSting))
+                 .getText();
     }
 
 }

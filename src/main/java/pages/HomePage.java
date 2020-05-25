@@ -14,14 +14,25 @@ public class HomePage extends Page {
         super(pages);
     }
 
+    @FindBy(xpath = "//span[@class = 'js-jump-to-badge-search-text-global']")
+    WebElement searchFieldButton;
+    @FindBy(xpath = "//input[@name = \'q\']")
+    WebElement searchField;
+
     public void goToLink(String http) {
         driver.get(http);
     }
 
-    public String getTitle(){
-        driver.get("https://github.com/");
+    public String getTitle(String text){
+        driver.get(text);
         wait.until(ExpectedConditions.titleIs(driver.getTitle()));
         return driver.getTitle();
+    }
+
+    public void enterToSearchField(String textToSearchField){
+        wait.until(ExpectedConditions.elementToBeClickable(searchField));
+        searchField.sendKeys(textToSearchField);
+        searchFieldButton.click();
     }
 
 }

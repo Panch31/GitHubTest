@@ -48,7 +48,6 @@ public class TestBase {
     @AfterSuite
     public void afterSuite() {
         driver.quit();
-        System.out.println("afterSuite");
     }
 
 }
