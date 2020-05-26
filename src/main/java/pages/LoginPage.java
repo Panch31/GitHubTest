@@ -21,11 +21,23 @@ public class LoginPage extends Page {
     @FindBy(id = "login_field")
     WebElement LoginField;
 
+    @FindBy(xpath = "//input[@name='user[login]']")
+    WebElement signUpField;
+
+    @FindBy(xpath = "//input[@name='user[email]']")
+    WebElement signUpPassField;
+
     @FindBy(id = "password")
     WebElement PasswordField;
 
     @FindBy(xpath = "//input[@type = 'submit']")
     WebElement SubmitButton;
+
+    @FindBy(xpath = "(//dd[contains(@id, 'input-check')])[1]/div/div[1]")
+    WebElement loginCheckNotification;
+
+    @FindBy(xpath = "(//dd[contains(@id, 'input-check')])[2]")
+    WebElement passwordCheckNotification;
 
     @FindBy(xpath = "//span[contains(@class, 'nick')]")
     WebElement NameSting;
@@ -38,6 +50,16 @@ public class LoginPage extends Page {
     public void enterToLoginField(String name) {
         wait.until(ExpectedConditions.elementToBeClickable(LoginField))
                 .sendKeys(name);
+    }
+
+    public void enterToSignUpField(String login) {
+        wait.until(ExpectedConditions.visibilityOf(signUpField))
+                .sendKeys(login);
+    }
+
+    public void enterToSignUpPassField(String signUpPass) {
+        wait.until(ExpectedConditions.visibilityOf(signUpPassField))
+                .sendKeys(signUpPass);
     }
 
     public void enterToPasswordField(String pass) {
@@ -54,6 +76,16 @@ public class LoginPage extends Page {
         driver.get(userLink);
          return wait.until(ExpectedConditions.visibilityOf(NameSting))
                  .getText();
+    }
+
+    public String getTextFromLoginCheckNotification(){
+        wait.until(ExpectedConditions.visibilityOf(loginCheckNotification));
+        return loginCheckNotification.getText();
+    }
+
+    public String getTextFromPasswordCheckNotification(){
+        wait.until(ExpectedConditions.visibilityOf(passwordCheckNotification));
+        return passwordCheckNotification.getText();
     }
 
 }

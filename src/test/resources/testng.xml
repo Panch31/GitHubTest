@@ -12,7 +12,8 @@
                     <exclude name="repoTest"/>
                     <exclude name="marketplaceTest"/>
                     <exclude name="marketPlaceLinkTest"/>
-                    <include name="dataProviderTest"/>
+                    <exclude name="dataProviderTest"/>
+                    <include name="loginDataProviderTest"/>
                 </methods>
             </class>
         </classes>

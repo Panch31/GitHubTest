@@ -91,6 +91,16 @@ public class FirstTest extends TestBase {
                 .toLowerCase().contains(data)));
         System.out.println("Data is: " + data);
     }
+
+    @Test(dataProvider = "loginDataProvider", dataProviderClass = DataProviderClass.class)
+    public void loginDataProviderTest(String userName, String email)
+    {
+        app.getNavigationHelper().goToLink("https://github.com/");
+        String login = app.getUserHelper().invalidUserLogin(userName);
+        String pass = app.getUserHelper().invalidUserPass(email);
+        Assert.assertTrue(login.contains("is not available."));
+        Assert.assertTrue(pass.contains("Email is invalid"));
+    }
 }
 
 
