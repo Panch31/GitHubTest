@@ -1,10 +1,13 @@
 package helpers;
 
+import io.qameta.allure.Attachment;
 import io.qameta.allure.Step;
 import managers.AppManager;
+import org.testng.annotations.Listeners;
 import pages.FollowPage;
 import pages.LoginPage;
 import pages.PageManager;
+import util.TestListener;
 
 public class UserHelper extends PageManager {
     public UserHelper() {
@@ -19,15 +22,16 @@ public class UserHelper extends PageManager {
         loginPage.clickOnSubmitButton();
     }
 
-    @Step("enterToSugnUpField")
+    @Step("enter to SignUp Field")
     public String invalidUserLogin(String userName){
         loginPage.enterToSignUpField(userName);
         return loginPage.getTextFromLoginCheckNotification();
     }
 
-    @Step("enterToPassField")
-    public String invalidUserPass(String password){
-        loginPage.enterToSignUpPassField(password);
+
+    @Step("enter To email field")
+    public String invalidUserEmail(String email){
+        loginPage.enterToSignUpPassField(email);
         return loginPage.getTextFromPasswordCheckNotification();
     }
 

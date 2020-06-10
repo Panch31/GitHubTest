@@ -2,6 +2,7 @@
 import org.testng.Assert;
 import org.testng.annotations.Test;
 import util.DataProviderClass;
+import util.PropertyLoader;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -96,10 +97,20 @@ public class FirstTest extends TestBase {
     public void loginDataProviderTest(String userName, String email)
     {
         app.getNavigationHelper().goToLink("https://github.com/");
+        userName = PropertyLoader.loadProperty("userGithub.name");
         String login = app.getUserHelper().invalidUserLogin(userName);
-        String pass = app.getUserHelper().invalidUserPass(email);
+        Assert.assertTrue(login.contains("is available"));
         Assert.assertTrue(login.contains("is not available."));
-        Assert.assertTrue(pass.contains("Email is invalid"));
+        String userEmail = app.getUserHelper().invalidUserEmail(email);
+        Assert.assertTrue(userEmail.contains("Email is invalid"));
+    }
+
+    @Test
+    public void profileTest(){
+        app.getNavigationHelper().goToLink("https://github.com/");
+        System.out.println(PropertyLoader.loadProperty("userGithub.name"));
+        String login = app.getUserHelper().invalidUserLogin(PropertyLoader.loadProperty("userGithub.name"));
+        Assert.assertTrue(login.contains("is not available"));
     }
 }
 

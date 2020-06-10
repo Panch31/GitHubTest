@@ -1,101 +1,41 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="8" total="11" passed="3" failed="0" skipped="0">
+<testng-results ignored="9" total="10" passed="1" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2020-05-26T19:18:23 EEST" name="Suite1" finished-at="2020-05-26T19:18:39 EEST" duration-ms="15950">
+  <suite started-at="2020-05-28T15:25:12 EEST" name="followTest" finished-at="2020-05-28T15:25:29 EEST" duration-ms="16400">
     <groups>
     </groups>
-    <test started-at="2020-05-26T19:18:23 EEST" name="PunchTest" finished-at="2020-05-26T19:18:39 EEST" duration-ms="15950">
+    <test started-at="2020-05-28T15:25:12 EEST" name="PunchTest" finished-at="2020-05-28T15:25:29 EEST" duration-ms="16400">
       <class name="FirstTest">
-        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:FirstTest@70a898b0]" started-at="2020-05-26T19:18:23 EEST" name="beforeSuite" finished-at="2020-05-26T19:18:23 EEST" duration-ms="83" status="PASS">
+        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:FirstTest@4d7a64ca]" started-at="2020-05-28T15:25:12 EEST" name="beforeSuite" finished-at="2020-05-28T15:25:12 EEST" duration-ms="41" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:FirstTest@70a898b0]" started-at="2020-05-26T19:18:23 EEST" name="beforeSuite" finished-at="2020-05-26T19:18:23 EEST" duration-ms="3" status="PASS">
+        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:FirstTest@4d7a64ca]" started-at="2020-05-28T15:25:12 EEST" name="beforeSuite" finished-at="2020-05-28T15:25:12 EEST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:FirstTest@70a898b0]" started-at="2020-05-26T19:18:23 EEST" name="beforeSuite" finished-at="2020-05-26T19:18:23 EEST" duration-ms="2" status="PASS">
+        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:FirstTest@4d7a64ca]" started-at="2020-05-28T15:25:12 EEST" name="beforeSuite" finished-at="2020-05-28T15:25:12 EEST" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeSuite -->
-        <test-method signature="loginDataProviderTest(java.lang.String, java.lang.String)[pri:0, instance:FirstTest@70a898b0]" started-at="2020-05-26T19:18:24 EEST" name="loginDataProviderTest" data-provider="loginDataProvider" finished-at="2020-05-26T19:18:32 EEST" duration-ms="8958" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[user1]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[pass1]]>
-              </value>
-            </param>
-          </params>
+        <test-method signature="loginTest()[pri:0, instance:FirstTest@4d7a64ca]" started-at="2020-05-28T15:25:13 EEST" name="loginTest" finished-at="2020-05-28T15:25:29 EEST" duration-ms="15870" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- loginDataProviderTest -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:FirstTest@70a898b0]" started-at="2020-05-26T19:18:32 EEST" name="afterMethod" finished-at="2020-05-26T19:18:32 EEST" duration-ms="2" status="PASS">
+        </test-method> <!-- loginTest -->
+        <test-method is-config="true" signature="afterMethod()[pri:0, instance:FirstTest@4d7a64ca]" started-at="2020-05-28T15:25:29 EEST" name="afterMethod" finished-at="2020-05-28T15:25:29 EEST" duration-ms="2" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:FirstTest@70a898b0]" started-at="2020-05-26T19:18:32 EEST" name="beforeSuite" finished-at="2020-05-26T19:18:32 EEST" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeSuite -->
-        <test-method signature="loginDataProviderTest(java.lang.String, java.lang.String)[pri:0, instance:FirstTest@70a898b0]" started-at="2020-05-26T19:18:32 EEST" name="loginDataProviderTest" data-provider="loginDataProvider" finished-at="2020-05-26T19:18:36 EEST" duration-ms="3315" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[user2]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[pass2]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loginDataProviderTest -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:FirstTest@70a898b0]" started-at="2020-05-26T19:18:36 EEST" name="afterMethod" finished-at="2020-05-26T19:18:36 EEST" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="beforeSuite()[pri:0, instance:FirstTest@70a898b0]" started-at="2020-05-26T19:18:36 EEST" name="beforeSuite" finished-at="2020-05-26T19:18:36 EEST" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- beforeSuite -->
-        <test-method signature="loginDataProviderTest(java.lang.String, java.lang.String)[pri:0, instance:FirstTest@70a898b0]" started-at="2020-05-26T19:18:36 EEST" name="loginDataProviderTest" data-provider="loginDataProvider" finished-at="2020-05-26T19:18:39 EEST" duration-ms="2956" status="PASS">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[user3]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[pass3]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- loginDataProviderTest -->
-        <test-method is-config="true" signature="afterMethod()[pri:0, instance:FirstTest@70a898b0]" started-at="2020-05-26T19:18:39 EEST" name="afterMethod" finished-at="2020-05-26T19:18:39 EEST" duration-ms="1" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterMethod -->
-        <test-method is-config="true" signature="afterClass()[pri:0, instance:FirstTest@70a898b0]" started-at="2020-05-26T19:18:39 EEST" name="afterClass" finished-at="2020-05-26T19:18:39 EEST" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="afterClass()[pri:0, instance:FirstTest@4d7a64ca]" started-at="2020-05-28T15:25:29 EEST" name="afterClass" finished-at="2020-05-28T15:25:29 EEST" duration-ms="3" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterClass -->
-        <test-method is-config="true" signature="afterSuite()[pri:0, instance:FirstTest@70a898b0]" started-at="2020-05-26T19:18:40 EEST" name="afterSuite" finished-at="2020-05-26T19:18:41 EEST" duration-ms="759" status="PASS">
+        <test-method is-config="true" signature="afterSuite()[pri:0, instance:FirstTest@4d7a64ca]" started-at="2020-05-28T15:25:29 EEST" name="afterSuite" finished-at="2020-05-28T15:25:30 EEST" duration-ms="1017" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterSuite -->
       </class> <!-- FirstTest -->
     </test> <!-- PunchTest -->
-  </suite> <!-- Suite1 -->
+  </suite> <!-- followTest -->
 </testng-results>

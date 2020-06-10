@@ -29,10 +29,11 @@ public class AppManager {
                 .usingAnyFreePort()
                 .build();
         ChromeOptions chromeOptions = new ChromeOptions()
-                .addArguments("--start-maximized");
+                .addArguments(PropertyLoader.loadProperty("chrome.option1"))
+                .addArguments(PropertyLoader.loadProperty("chrome.option2"));
         driver = new ChromeDriver(driverService, chromeOptions);
-        driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
-        driver.manage().timeouts().pageLoadTimeout(20,TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+        driver.manage().timeouts().pageLoadTimeout(10,TimeUnit.SECONDS);
         userHelper = new UserHelper();
         navigationHelper = new NavigationHelper();
         repositoryHelper = new RepositoryHelper();

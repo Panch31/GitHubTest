@@ -12,7 +12,7 @@ public class DataProviderClass {
 
     @DataProvider(name = "loginDataProvider")
     public static Object[][] loginDataProviderMethod() {
-        return new Object[][] { { "user1", "pass1" }, { "user2", "pass2" }, {"user3", "pass3"} };
+        return new Object[][] { { "user1", "pass1" }, { "Panch31313131", "pass2" }, {"user3", "pass3"} };
     }
 }
 

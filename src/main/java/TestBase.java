@@ -7,13 +7,17 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Wait;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.ITestListener;
 import org.testng.annotations.*;
 import pages.FollowPage;
 import pages.HomePage;
 import pages.LoginPage;
+import util.TestListener;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 
+@Listeners(util.TestListener.class)
 public class TestBase {
 
     AppManager app = SingletonAppManager.getInstance().manager;
@@ -31,18 +35,16 @@ public class TestBase {
 
     @BeforeSuite
     public void beforeSuite() {
-        System.out.println("beforeSuite");
     }
 
 
     @AfterMethod
     public void afterMethod() {
-        System.out.println("afterMethod");
+
     }
 
     @AfterClass
     public void afterClass() {
-        System.out.println("afterClass");
     }
 
     @AfterSuite
